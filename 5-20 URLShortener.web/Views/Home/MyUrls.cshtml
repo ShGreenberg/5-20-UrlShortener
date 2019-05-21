@@ -1,0 +1,32 @@
+﻿@using _5_20_URLShortener.data
+@model IEnumerable<Url>
+@{
+    ViewData["Title"] = "MyUrls";
+}
+
+<h2>MyUrls</h2>
+<div class="container">
+    <table class="table table-bordered table-striped">
+        <tr>
+            <td>Org Url</td>
+            <td>Short Url</td>
+            <td>Num Views</td>
+        </tr>
+        @foreach(Url u in Model)
+        {
+            <tr>
+                <td><a href="@u.OrgUrl" target="_blank">@u.OrgUrl</a></td>
+                <td><a href="@u.HashedUrl" target="_blank">@u.HashedUrl</a></td>
+                <td>@u.Views</td>
+            </tr>
+        }
+    </table>
+</div>
+
+@section scripts{ 
+    <script>
+        $(() => {
+            
+        })
+    </script>
+}
