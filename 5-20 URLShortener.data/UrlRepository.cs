@@ -22,7 +22,7 @@ namespace _5_20_URLShortener.data
             {
                 string hash = "";
                 var urls = ctx.Urls;
-                if (urls.FirstOrDefault(u => u.OrgUrl == url) == null)
+                if (urls.FirstOrDefault(u => u.User.Email == email && u.OrgUrl == url) == null)
                 {
                     hash = "http://localhost:57845/" + ShortId.Generate(7);
                     while (urls.FirstOrDefault(u => u.HashedUrl == hash) != null)
